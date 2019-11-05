@@ -1,6 +1,7 @@
 package com.bah.model;
 
-public class customer {
+public class Customer {
+	
 	private String username;
 	private String password;
 	
