@@ -1,18 +1,26 @@
-HELP.md
+##---------------------------------------------##
+## ~/.gitignore ###
+##---------------------------------------------##
+
+### Gradle ###
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**
-!**/src/test/**
 
-### STS ###
+
+### Maven ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+
+### STS / Eclipse ###
 .apt_generated
 .classpath
+bin/
 .factorypath
 .project
 .settings
 .springBeans
-.sts4-cache
 
 ### IntelliJ IDEA ###
 .idea
@@ -22,11 +30,31 @@ build/
 out/
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
 
-### VS Code ###
-.vscode/
+
+### Other ignores ###
+
+target/
+.DS_Store
+
+*.bak
+*.diff
+
+## CI Environments:
+!.circleci
+
+
+
+## Vagrant
+.vagrant/
+*.box
+
+##---------------------------------------------##
+### THE END ###
+##---------------------------------------------##
