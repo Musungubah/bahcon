@@ -1,0 +1,24 @@
+package com.bah.msd.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.bah.msd.model.Customer;
+
+public class CustomerInfoRepository {
+	
+	List<Customer> customerInfoRepository = new ArrayList<>();
+	
+	public CustomerInfoRepository() {
+	
+	}
+	
+	//some seed data in memory
+	public void initializeSeedData() {
+		Customer one = new Customer("John", "ABC123","John@bah.com");
+		Customer two = new Customer("Frank", "ABC123", "Frank@bah.com");
+		this.customerInfoRepository.add(one);
+		this.customerInfoRepository.add(two);
+	}
+
+}

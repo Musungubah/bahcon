@@ -1,0 +1,5 @@
+package com.bah.msd.dao;
+
+public interface CustomersDAO {
+
+}

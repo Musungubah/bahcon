@@ -1,0 +1,5 @@
+package com.bah.msd.model;
+
+public class Customer {
+
+}

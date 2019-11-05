@@ -1,0 +1,29 @@
+package com.bah.msd.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.bah.msd.model.Customer;
+
+@RestController("/City")
+public class CustomersController {
+	
+	@GetMapping("/getAllCustomer")
+	public String getCustomer() {
+		return "Customer test";
+	}
+	
+	
+	@GetMapping("/getCustomer/{name}")
+	public String getCustomerByName(@PathVariable String name) {
+		return "Customer by Name " + name;
+	}
+	
+	@GetMapping("/getCustomerByEmail/{email}")
+	public String getCustomerByEmail(@PathVariable String email) {
+		return "Customer by Email " + email;
+	}
+
+}

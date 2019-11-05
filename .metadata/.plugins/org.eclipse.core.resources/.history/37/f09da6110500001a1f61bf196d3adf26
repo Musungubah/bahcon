@@ -1,0 +1,10 @@
+package com.bah.valueofModel;
+
+
+
+public class Customer {
+
+	private String name;
+	private String Event;
+	
+}

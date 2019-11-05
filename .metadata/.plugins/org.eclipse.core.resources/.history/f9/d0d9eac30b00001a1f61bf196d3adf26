@@ -1,0 +1,10 @@
+package com.bah.msd.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController("/City")
+public class CustomersController {
+	
+	
+
+}

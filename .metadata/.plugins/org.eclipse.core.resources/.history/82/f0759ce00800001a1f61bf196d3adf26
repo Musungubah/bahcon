@@ -1,0 +1,7 @@
+package com.bah.msd.repository;
+
+
+
+public interface CustomersRepository extends CrudRepository<Customer, Long> {
+
+}
