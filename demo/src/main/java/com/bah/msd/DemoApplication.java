@@ -1,4 +1,4 @@
-package com.bah.demo;
+package com.bah.msd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
