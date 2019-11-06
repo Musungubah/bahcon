@@ -41,7 +41,8 @@ public class CustomerAPI {
 	
 	@DeleteMapping(path="/{name}")
 	public void deleteACustomer(@PathVariable String name) {
-		repo.deleteByName(name);
+		Customer m1 = repo.findByName(name);
+		repo.delete(m1);
 	}
 	
 	@PostMapping

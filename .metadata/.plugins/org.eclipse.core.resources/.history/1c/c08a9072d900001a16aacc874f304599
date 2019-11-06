@@ -41,7 +41,7 @@ public class CustomerAPI {
 	
 	@DeleteMapping(path="/{name}")
 	public void deleteACustomer(@PathVariable String name) {
-		repo.deleteByName(name);
+		
 	}
 	
 	@PostMapping
