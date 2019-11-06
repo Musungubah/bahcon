@@ -23,7 +23,7 @@ public class CustomersController {
 	private CustomerInfoRepository customerInfoRepository = new CustomerInfoRepository();
 	
 	
-	@GetMapping(path="/getAllCustomer", produces=JSON)
+	@GetMapping(path="/Customer", produces=JSON)
 	public Collection<Customer> getCustomer() {
 		return customerInfoRepository.findAll();
 	}
