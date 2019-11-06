@@ -18,7 +18,9 @@ public class Customer {
 	private Long id;
 	@Column(name="CUSTOMER_NAME")
 	private String name;
-//	private String password;
+	@Column(name="PASSWORD")
+	private String password;
+	@Column(name="EMAIL")
 	private String email;
 	
 	public Customer() {
@@ -29,7 +31,7 @@ public class Customer {
 	public Customer(String name, String password, String email) {
 		super();
 		this.name = name;
-//		this.password = password;
+		this.password = password;
 		this.email = email;
 	}
 	
@@ -39,12 +41,12 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
-//	public String getPassword() {
-//		return password;
-//	}
-//	public void setPassword(String password) {
-//		this.password = password;
-//	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	public String getEmail() {
 		return email;
 	}
