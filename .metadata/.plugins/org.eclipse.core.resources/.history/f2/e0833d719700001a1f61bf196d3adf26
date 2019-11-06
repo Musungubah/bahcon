@@ -19,7 +19,7 @@ import com.bah.msd.repository.CustomerInfoRepository;
 public class CustomersController {
 	static final String JSON = "application/json";
 	
-	@Autowired
+	//@Autowired
 	private CustomerInfoRepository customerInfoRepository = new CustomerInfoRepository();
 	
 	

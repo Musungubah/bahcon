@@ -714,3 +714,48 @@ org.eclipse.swt.SWTException: Widget is disposed
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-05 16:43:53.306
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.VLlhlpLN => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.788
+!MESSAGE Boot LS startup time from start to initialized: 1824ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.808
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.bMGSDGBiisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.808
+!MESSAGE subscribing to classpath changes: sts4.classpath.bMGSDGBi isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.809
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.809
+!MESSAGE subsribers = {sts4.classpath.bMGSDGBi=Send Classpath Notifications(4521)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.809
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.809
+!MESSAGE project demo ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.809
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.810
+!MESSAGE Preparing classpath changed notification demo
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.810
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.810
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.bMGSDGBi => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.813
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.819
+!MESSAGE buffering callback sts4.classpath.bMGSDGBi demo false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.819
+!MESSAGE executing callback sts4.classpath.bMGSDGBi 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-06 08:14:33.852
+!MESSAGE executing callback sts4.classpath.bMGSDGBi SUCCESS [done]

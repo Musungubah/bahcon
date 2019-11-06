@@ -5,15 +5,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class Customer {
 
-	
 	private String name;
+	
 	private String password;
 	private String email;
-	
-	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	
 	public Customer(String name, String password, String email) {
 		super();
@@ -22,7 +17,9 @@ public class Customer {
 		this.email = email;
 	}
 	
-	
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getName() {
 		return name;
 	}
