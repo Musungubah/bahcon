@@ -16,21 +16,23 @@ public class Event {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "EVENT_NAME")
+	@Column(name = "EVENT_CODE")
 	private String name;
 	
-	@Column(name="PURCHASE_DATE")
+	@Column(name="TITLE")
 	private String date;
 	
-	@Column(name="CUSTOMER_ID")
-	private Integer customerId;
+	@Column(name="DESCRIPTION")
+	private String description;
+	
+	
 
-	public Integer getCustomerId() {
-		return customerId;
+	public String getdescription() {
+		return description;
 	}
 
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
+	public void setdescription(String description) {
+		this.description = description;
 	}
 
 	public Event() {

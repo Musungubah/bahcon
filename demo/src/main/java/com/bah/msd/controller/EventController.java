@@ -1,10 +1,13 @@
 package com.bah.msd.controller;
 
 import java.net.URI;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,29 +38,36 @@ public class EventController {
 		return repo.findByName(EventName);
 	}
 	
+	@DeleteMapping(path="/{name}")
+	public void deleteAEvent(@PathVariable String name) {
+		repo.deleteByName(name);
+	}
+	
 	@PostMapping
 	public ResponseEntity<?> addEvent(@RequestBody Event newEvent,
 			UriComponentsBuilder uri){
-		if(newEvent.getId() != 0 || newEvent.getName() == null 
+		if( newEvent.getName() == null 
 				|| newEvent.getDate() == null) {
 			return ResponseEntity.badRequest().build();
 		}
 		
 		newEvent=repo.save(newEvent);
 		URI location=ServletUriComponentsBuilder.fromCurrentRequest()
-				.path("/{id}").buildAndExpand(newEvent.getId()).toUri();
+				.path("/{EventName}").buildAndExpand(newEvent.getId()).toUri();
 		
 		ResponseEntity<?> response=ResponseEntity.created(location).build();
 		return response;
 	}
 	
-	@PutMapping("/{EventId}")
+	@PutMapping("/{EventName}")
 	public ResponseEntity<?> putEvent(@RequestBody Event newEvent, 
-			@PathVariable("customerId") long customerId){
-		if(newEvent.getId() != customerId|| newEvent.getName() == null 
+			@PathVariable("EventName") String EventName){
+		if(newEvent.getId() == 0|| newEvent.getName() == null 
 				|| newEvent. getDate()== null) {
 			return ResponseEntity.badRequest().build();
 		}
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); 
+		newEvent.setDate(dtf.format(LocalDateTime.now()).toString());
 		newEvent = repo.save(newEvent);
 		return ResponseEntity.ok().build();
 	}
