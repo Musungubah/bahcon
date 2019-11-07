@@ -13,13 +13,16 @@ import javax.persistence.Table;
 public class Event {
 
 	@Id
-
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Column(name = "EVENT_NAME")
 	private String name;
+	
+	@Column(name="PURCHASE_DATE")
 	private String date;
+	
+	@Column(name="CUSTOMER_ID")
 	private Integer customerId;
 
 	public Integer getCustomerId() {

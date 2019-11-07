@@ -30,9 +30,9 @@ public class EventController {
 		return repo.findAll();
 	}
 	
-	@GetMapping("/{EventId}")
-	public Optional<Event> getCustomerById(@PathVariable("customerId") long id){
-		return repo.findById(id);
+	@GetMapping("/{EventName}")
+	public Event getCustomerById(@PathVariable("EventName") String EventName){
+		return repo.findByName(EventName);
 	}
 	
 	@PostMapping
