@@ -33,6 +33,10 @@ public class CustomerAPI {
 		return repo.findAll();
 	}
 	
+	@GetMapping(path="/name/{name}", produces=JSON)
+	public Customer getACustomerByName(@PathVariable String name) {
+		return repo.findByName(name);
+	}
 
 	@GetMapping(path="/{name}", produces=JSON)
 	public Customer getACustomer(@PathVariable String name) {
