@@ -22,7 +22,7 @@ import com.bah.msd.model.Registration;
 import com.bah.msd.repository.RegistrationRepository;
 
 @RestController
-@RequestMapping("/registration")
+@RequestMapping("/registrations")
 public class RegistrationController {
 	
 	@Autowired
@@ -65,7 +65,7 @@ public class RegistrationController {
 				|| newRegistration.getDate()== null) {
 			return ResponseEntity.badRequest().build();
 		}
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); 
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd"); 
 		newRegistration.setDate(dtf.format(LocalDateTime.now()).toString());
 		newRegistration = repo.save(newRegistration);
 		return ResponseEntity.ok().build();

@@ -33,9 +33,14 @@ public class EventController {
 		return repo.findAll();
 	}
 	
-	@GetMapping("/{EventName}")
+	@GetMapping("/name/{EventName}")
 	public Event getCustomerById(@PathVariable("EventName") String EventName){
 		return repo.findByName(EventName);
+	}
+	
+	@GetMapping("/{EventId}")
+	public Event getCustomerById(@PathVariable("EventId") Long EventId){
+		return repo.findByName(repo.findById(EventId).get().getName());
 	}
 	
 	@DeleteMapping(path="/{name}")
