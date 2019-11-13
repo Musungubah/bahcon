@@ -38,9 +38,9 @@ public class CustomerAPI {
 		return repo.findByName(name);
 	}
 
-	@GetMapping(path="/{name}", produces=JSON)
-	public Customer getACustomer(@PathVariable String name) {
-		return repo.findByName(name);
+	@GetMapping(path="/{id}", produces=JSON)
+	public Customer getACustomer(@PathVariable Long Id) {
+		return repo.findByName(repo.findById(Id).get().getName());
 	}
 	
 	@DeleteMapping(path="/{name}")

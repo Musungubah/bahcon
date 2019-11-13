@@ -33,8 +33,14 @@ public class RegistrationController {
 		return repo.findAll();
 	}
 	
-	@GetMapping("/{RegistrationName}")
-	public Registration getCustomerById(@PathVariable("RegistrationName") String RegistrationName){
+	@GetMapping("/{id}")
+	public Registration getById(@PathVariable("id") Long Id) {
+		return repo.findById(Id).get();
+	}
+	
+	
+	@GetMapping("/name/{RegistrationName}")
+	public Registration getCustomerByName(@PathVariable("RegistrationName") String RegistrationName){
 		return repo.findByName(RegistrationName);
 	}
 	
