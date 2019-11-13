@@ -1,5 +1,0 @@
-package com.bah.msd.service;
-
-public interface CustomerService {
-
-}

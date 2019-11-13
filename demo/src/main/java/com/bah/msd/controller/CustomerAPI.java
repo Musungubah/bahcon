@@ -37,7 +37,18 @@ public class CustomerAPI {
 	public Customer getACustomerByName(@PathVariable String name) {
 		return repo.findByName(name);
 	}
-
+	
+	@PostMapping(path="/login")
+	public boolean doLogin(@RequestBody Customer customer) {
+		String testPass = customer.getPassword();
+		String repoPass = repo.findByName(customer.getName()).getPassword();
+		
+		if(testPass.equals(repoPass))
+			return true;
+		else
+			return false;
+	}
+	
 	@GetMapping(path="/{id}", produces=JSON)
 	public Customer getACustomer(@PathVariable Long Id) {
 		return repo.findByName(repo.findById(Id).get().getName());
