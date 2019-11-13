@@ -30,29 +30,26 @@ public class EventController {
 	
 	@GetMapping
 	public Iterable<Event> getAll(){
+		System.out.println(repo.findAll());
 		return repo.findAll();
 	}
 	
-	@GetMapping("/name/{EventName}")
-	public Event getCustomerById(@PathVariable("EventName") String EventName){
-		return repo.findByName(EventName);
-	}
 	
 	@GetMapping("/{EventId}")
 	public Event getCustomerById(@PathVariable("EventId") Long EventId){
-		return repo.findByName(repo.findById(EventId).get().getName());
+		return repo.findById(EventId).get();
 	}
 	
-	@DeleteMapping(path="/{name}")
-	public void deleteAEvent(@PathVariable String name) {
-		repo.deleteByName(name);
+	@DeleteMapping(path="/{id}")
+	public void deleteAEvent(@PathVariable("id") Long id) {
+		repo.deleteById(id);;
 	}
 	
 	@PostMapping
 	public ResponseEntity<?> addEvent(@RequestBody Event newEvent,
 			UriComponentsBuilder uri){
-		if( newEvent.getName() == null 
-				|| newEvent.getDate() == null) {
+		if( newEvent.getTitle() == null 
+				|| newEvent.getId() == null) {
 			return ResponseEntity.badRequest().build();
 		}
 		
@@ -67,12 +64,12 @@ public class EventController {
 	@PutMapping("/{EventName}")
 	public ResponseEntity<?> putEvent(@RequestBody Event newEvent, 
 			@PathVariable("EventName") String EventName){
-		if(newEvent.getId() == 0|| newEvent.getName() == null 
-				|| newEvent. getDate()== null) {
+		if(newEvent.getId() == 0|| newEvent.getTitle() == null 
+				|| newEvent.getdescription()== null) {
 			return ResponseEntity.badRequest().build();
 		}
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); 
-		newEvent.setDate(dtf.format(LocalDateTime.now()).toString());
+		//DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); 
+		//newEvent.setDate(dtf.format(LocalDateTime.now()).toString());
 		newEvent = repo.save(newEvent);
 		return ResponseEntity.ok().build();
 	}

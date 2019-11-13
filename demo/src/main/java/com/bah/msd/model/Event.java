@@ -17,10 +17,10 @@ public class Event {
 	private Long id;
 
 	@Column(name = "EVENT_CODE")
-	private String name;
+	private String code;
 	
 	@Column(name="TITLE")
-	private String date;
+	private String title;
 	
 	@Column(name="DESCRIPTION")
 	private String description;
@@ -42,16 +42,16 @@ public class Event {
 	public Event(Long id, String name, String date) {
 		super();
 		this.id = id;
-		this.name = name;
-		this.date = date;
+		this.code = name;
+		this.title = date;
 	}
 
-	public String getName() {
-		return name;
+	public String getCode() {
+		return code;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCode(String name) {
+		this.code = name;
 	}
 
 	public Long getId() {
@@ -62,11 +62,11 @@ public class Event {
 		this.id = id;
 	}
 
-	public String getDate() {
-		return date;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setTitle(String date) {
+		this.title = date;
 	}
 }

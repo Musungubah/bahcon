@@ -1,5 +1,7 @@
 package com.bah.msd.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,39 +18,28 @@ public class Registration {
 	private Long id;
 
 	@Column(name = "EVENT_ID")
-	private String name;
+	private String event_id;
+	
 	@Column(name = "REGISTRATION_DATE")
-	private String date;
+	private Date registration_date;
+	
 	@Column(name = "CUSTOMER_ID")
-	private Integer customerId;
+	private Integer customer_id;
+	
 	@Column(name = "NOTES")
-	private String description;
+	private String notes;
 
-	public Integer getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
-	}
+	
 
 	public Registration() {
 		super();
 	} // TODO Auto-generated constructor stub }
 
-	public Registration(Long id, String name, String date) {
+	public Registration(Long id, String name, Date date) {
 		super();
 		this.id = id;
-		this.name = name;
-		this.date = date;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+		this.event_id = name;
+		this.registration_date = date;
 	}
 
 	public Long getId() {
@@ -59,19 +50,37 @@ public class Registration {
 		this.id = id;
 	}
 
-	public String getDate() {
-		return date;
+	public String getEvent_id() {
+		return event_id;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setEvent_id(String event_id) {
+		this.event_id = event_id;
 	}
 
-	public String getDescription() {
-		return description;
+	public Date getRegistration_date() {
+		return registration_date;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setRegistration_date(Date registration_date) {
+		this.registration_date = registration_date;
 	}
+
+	public Integer getCustomer_id() {
+		return customer_id;
+	}
+
+	public void setCustomer_id(Integer customer_id) {
+		this.customer_id = customer_id;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+	
 }

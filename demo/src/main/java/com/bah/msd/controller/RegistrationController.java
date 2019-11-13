@@ -39,21 +39,21 @@ public class RegistrationController {
 	}
 	
 	
-	@GetMapping("/name/{RegistrationName}")
-	public Registration getCustomerByName(@PathVariable("RegistrationName") String RegistrationName){
-		return repo.findByName(RegistrationName);
-	}
+//	@GetMapping("/name/{RegistrationName}")
+//	public Registration getCustomerByName(@PathVariable("RegistrationName") String RegistrationName){
+//		return repo.findByName(RegistrationName);
+//	}
 	
 	@DeleteMapping(path="/{name}")
-	public void deleteAEvent(@PathVariable String name) {
-		repo.deleteByName(name);
+	public void deleteAEvent(@PathVariable Long name) {
+		repo.deleteById(name);
 	}
 	
 	@PostMapping
 	public ResponseEntity<?> addEvent(@RequestBody Registration newRegistration,
 			UriComponentsBuilder uri){
-		if( newRegistration.getName() == null 
-				|| newRegistration.getDate() == null) {
+		if( newRegistration.getNotes() == null 
+				|| newRegistration.getRegistration_date() == null) {
 			return ResponseEntity.badRequest().build();
 		}
 		newRegistration=repo.save(newRegistration);
@@ -67,12 +67,12 @@ public class RegistrationController {
 	@PutMapping("/{RegistrationName}")
 	public ResponseEntity<?> putEvent(@RequestBody Registration newRegistration, 
 			@PathVariable("RegistrationName") String RegistrationName){
-		if(newRegistration.getId() == 0|| newRegistration.getName() == null 
-				|| newRegistration.getDate()== null) {
+		if(newRegistration.getId() == 0|| newRegistration.getEvent_id() == null 
+				|| newRegistration.getRegistration_date()== null) {
 			return ResponseEntity.badRequest().build();
 		}
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd"); 
-		newRegistration.setDate(dtf.format(LocalDateTime.now()).toString());
+//		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd"); 
+//		newRegistration.setDate(dtf.format(LocalDateTime.now()).toString());
 		newRegistration = repo.save(newRegistration);
 		return ResponseEntity.ok().build();
 	}
