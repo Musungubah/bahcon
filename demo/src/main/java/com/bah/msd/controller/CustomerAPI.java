@@ -62,6 +62,8 @@ public class CustomerAPI {
 	@PostMapping
 	public ResponseEntity<?> addCustomer(@RequestBody Customer newCustomer,
 			UriComponentsBuilder uri){
+		System.out.println("Test registration!");
+		
 		if( newCustomer.getName() == null 
 				|| newCustomer.getEmail() == null) {
 			return ResponseEntity.badRequest().build();
