@@ -40,6 +40,11 @@ public class CustomerAPI {
 	
 	@PostMapping(path="/login")
 	public boolean doLogin(@RequestBody Customer customer) {
+		if(customer.getName() == null || customer.getPassword() == null)
+			return false;
+		
+		System.out.println(customer.getName() + " " + customer.getPassword());
+		
 		String testPass = customer.getPassword();
 		String repoPass = repo.findByName(customer.getName()).getPassword();
 		
@@ -49,9 +54,9 @@ public class CustomerAPI {
 			return false;
 	}
 	
-	@GetMapping(path="/{id}", produces=JSON)
-	public Customer getACustomer(@PathVariable Long Id) {
-		return repo.findByName(repo.findById(Id).get().getName());
+	@PostMapping(path="/{name}", produces=JSON)
+	public Customer getACustomer(@PathVariable("name") String name) {
+		return repo.findByName(name);
 	}
 	
 	@DeleteMapping(path="/{id}")
